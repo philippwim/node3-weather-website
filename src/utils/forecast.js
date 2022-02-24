@@ -12,8 +12,8 @@ const forecast = (lat, lon, fnCallback) => {
         } else if (body.error) {
             fnCallback("Unable to find location", undefined);
         } else {
-            const {temperature, feelslike, weather_descriptions} = body.current;
-            fnCallback(undefined, weather_descriptions + ". It is currently " +  temperature + " degrees out. It feels like " + feelslike + " degrees.");        
+            const {temperature, feelslike, weather_descriptions, humidity} = body.current;
+            fnCallback(undefined, weather_descriptions + ". It is currently " +  temperature + " degrees out. It feels like " + feelslike + " degrees. The humidity is " + humidity + "%.");        
         }
 
     });
